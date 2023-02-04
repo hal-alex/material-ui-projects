@@ -22,6 +22,7 @@ const styles = {
         padding: "0",
         marginRight: "44px",
         color: "black",
+        marginBottom: "10px",
     }
 }
 
