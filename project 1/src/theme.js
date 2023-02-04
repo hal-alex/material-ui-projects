@@ -18,12 +18,21 @@ const theme = createTheme({
             fontWeight: 700,
             fontSize: "32px",
             lineHeight: "39px",
+            textTransform: "capitalize",
             color: "black",
             [breakPoints.up("md")]: {
                 fontSize: "64px",
                 lineHeight: "78px",
             },
 
+        },
+        h3: {
+            fontFamily: "Montserrat, sans-serif",
+            fontWeight: 700,
+            fontSize: "24px",
+            lineHeight: "29px",
+            textTransform: "capitalize",
+            color: "black",
         },
         body1: {
             fontFamily: "Montserrat, sans-serif",
