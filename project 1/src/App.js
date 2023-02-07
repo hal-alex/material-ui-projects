@@ -7,6 +7,7 @@ import Header from "./components/Header"
 import Hero from "./components/Hero"
 import Card from "./components/Card"
 import CreativeDesign from "./components/CreativeDesign"
+import Experience from "./components/Experience"
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Header></Header>
       <Hero></Hero>
       <CreativeDesign></CreativeDesign>
+      <Experience></Experience>
     </Box>
   );
 }

@@ -16,7 +16,56 @@ const Experience = () => {
         "UX/UI Design"
     ]
 
-    const styles = {}
+    const styles = {
+        experience: (theme) => ({
+            padding: "44px 20px",
+            display: "flex",
+            justifyContent: "center",
+            textAlign: "center",
+            background: "gray",
+            [theme.breakpoints.up("sm")]: {
+                textAlign: "left",
+            },
+            [theme.breakpoints.up("lg")]: {
+                padding: "88px 20px",
+            },
+        }),
+        wrapper: {
+            maxWidth: "1240px"
+        },
+        links: (theme) => ({
+            flexGrow: 1,
+            display: "flex",
+            flexWrap: "wrap",
+            maxWidth: "1240px",
+            gap: "20px",
+            [theme.breakpoints.up("sm")]: {
+                maxWidth: "100%",
+                gap: "40px",
+            },
+        }),
+        imgItem: (theme) => ({
+            width: "100%",
+            marginTop: "24px",
+            maxWidth: "402px",
+            [theme.breakpoints.up("sm")]: {
+                marginTop: "44px",
+            },
+        }),
+        contentTitle: (theme) => ({
+            fontSize: "14px",
+            lineHeight: "17px",
+            textAlign: "left",
+            marginTop: "12px",
+            maxWidth: "402px",
+            margin: "12px auto 0",
+            ...theme.typography.someStyle,
+            [theme.breakpoints.up("sm")]: {
+                fontSize: "24px",
+                lineHeight: "29px",
+            },
+        }),
+    }
 
     return (
         <Box sx={styles.experience}>
@@ -50,9 +99,31 @@ const Experience = () => {
                             </Typography>
                         </Box>
                     </Grid>
+                    <Grid item xs={6} sm={4} md={4}>
+                        <Box>
+                            <Box component="img" src={landingPhoto}
+                                sx={styles.imgItem}
+                            >
+                            </Box>
+                            <Typography sx={styles.contentTitle}>
+                                landing pages
+                            </Typography>
+                        </Box>
+                    </Grid>
+                    <Grid item xs={6} sm={4} md={4}>
+                        <Box>
+                            <Box component="img" src={illustrationPhoto}
+                                sx={styles.imgItem}
+                            >
+                            </Box>
+                            <Typography sx={styles.contentTitle}>
+                                illustration design
+                            </Typography>
+                        </Box>
+                    </Grid>
                 </Grid>
             </Box>
-        </Box >
+        </Box>
     )
 }
 
