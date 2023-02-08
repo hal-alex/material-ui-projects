@@ -7,7 +7,101 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos"
 import photo_send from "../img/photo_send_2.png"
 
 const ContactUs = () => {
-  const styles = {}
+  const styles = {
+    contactUs: (theme) => ({
+      padding: "44px 20px",
+      textAlign: "left",
+      [theme.breakpoints.up("lg")]: {
+        display: "flex",
+        justifyContent: "center",
+        padding: "200px 20px 190px",
+      },
+    }),
+    wrapper: (theme) => ({
+      [theme.breakpoints.up("lg")]: {
+        maxWidth: "1240px",
+        display: "flex",
+        alignItems: "center",
+        gap: "120px",
+      },
+    }),
+    info: (theme) => ({
+      [theme.breakpoints.up("md")]: {
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        gap: "20px",
+      },
+    }),
+    form: (theme) => ({
+      maxWidth: "613px",
+      [theme.breakpoints.up("sm")]: {
+        margin: "auto",
+      },
+    }),
+    imgInfo: {
+      width: "16px",
+      height: "16px",
+      mr: "4px",
+    },
+    titleInfo: (theme) => ({
+      color: `${theme.palette.slateBlue.main}`,
+      fontWeight: 500,
+      fontSize: "16px",
+      lineHeight: "20px",
+      textTransform: "capitalize",
+      display: "flex",
+      alignItems: "center",
+    }),
+    titleValue: {
+      color: "black",
+      fontWeight: 500,
+      fontSize: "16px",
+      lineHeight: "20px",
+      marginTop: "3px",
+    },
+    itemBlockInfo: {
+      marginBottom: "24px",
+      flex: 1,
+    },
+    input: (theme) => ({
+      display: "flex",
+      gap: "25px",
+      flexDirection: "column",
+      [theme.breakpoints.up("lg")]: {
+        display: "flex",
+        gap: "20px",
+        flexDirection: "row",
+        justifyContent: "center",
+        alignItems: "center",
+      },
+    }),
+    textField: {
+      width: "300px",
+      // border: "2px solid blue",
+      "& input::placeholder": {
+        fontSize: "20px",
+        lineHeight: "20px",
+      },
+    },
+    photo: {
+      width: "100%",
+      margin: "44px auto 0",
+      maxWidth: "508px",
+      display: "block",
+    },
+    TextareaAutosize: {
+      margin: "24px 0",
+      padding: "12px",
+      width: "100%",
+      fontSize: "20px",
+      lineHeight: "20px",
+      border: "0.5px solid blue",
+      borderRadius: "8px",
+      outline: "none",
+      boxSizing: "border-box",
+    },
+  }
 
   return (
     <Box sx={styles.contactUs}>
