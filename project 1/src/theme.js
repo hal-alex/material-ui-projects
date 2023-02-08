@@ -1,57 +1,73 @@
-import { createTheme } from '@mui/material/styles'
-import createBreakpoints from '@mui/system/createTheme/createBreakpoints'
+import { createTheme } from "@mui/material/styles"
+import createBreakpoints from "@mui/system/createTheme/createBreakpoints"
 
 const breakPoints = createBreakpoints({})
 
 const theme = createTheme({
-    palette: {
-        primary: {
-            main: "#686868",
-        },
-        slateBlue: {
-            main: "#777FEB",
-        },
+  palette: {
+    primary: {
+      main: "#686868",
     },
-    typography: {
-        h2: {
-            fontFamily: "Montserrat, sans-serif",
-            fontWeight: 700,
-            fontSize: "32px",
-            lineHeight: "39px",
-            textTransform: "capitalize",
-            color: "black",
-            [breakPoints.up("md")]: {
-                fontSize: "64px",
-                lineHeight: "78px",
-            },
-
+    slateBlue: {
+      main: "#777FEB",
+    },
+  },
+  typography: {
+    h2: {
+      fontFamily: "Montserrat, sans-serif",
+      fontWeight: 700,
+      fontSize: "32px",
+      lineHeight: "39px",
+      textTransform: "capitalize",
+      color: "black",
+      [breakPoints.up("md")]: {
+        fontSize: "64px",
+        lineHeight: "78px",
+      },
+    },
+    h3: {
+      fontFamily: "Montserrat, sans-serif",
+      fontWeight: 700,
+      fontSize: "24px",
+      lineHeight: "29px",
+      textTransform: "capitalize",
+      color: "black",
+    },
+    body1: {
+      fontFamily: "Montserrat, sans-serif",
+      fontWeight: 400,
+      fontSize: "14px",
+      lineHeight: "17px",
+      color: "black",
+      [breakPoints.up("md")]: {
+        fontWeight: 500,
+        fontSize: "24px",
+        lineHeight: "29px",
+      },
+    },
+    someStyle: {
+      fontFamily: "Montserrat, sans-serif",
+      textTransform: "capitalize",
+    },
+  },
+  components: {
+    // Name of the component
+    MuiOutlinedInput: {
+      styleOverrides: {
+        notchedOutline: {
+          border: "0.5px solid blue",
         },
-        h3: {
-            fontFamily: "Montserrat, sans-serif",
-            fontWeight: 700,
-            fontSize: "24px",
-            lineHeight: "29px",
-            textTransform: "capitalize",
-            color: "black",
+        // Name of the slot
+        root: {
+          borderRadius: "8px",
+          color: "black",
+          fontSize: "16px",
+          lineHeight: "20px",
+          fontWeight: 500,
         },
-        body1: {
-            fontFamily: "Montserrat, sans-serif",
-            fontWeight: 400,
-            fontSize: "14px",
-            lineHeight: "17px",
-            color: "black",
-            [breakPoints.up("md")]: {
-                fontWeight: 500,
-                fontSize: "24px",
-                lineHeight: "29px",
-            },
-
-        },
-        someStyle: {
-            fontFamily: "Montserrat, sans-serif",
-            textTransform: "capitalize",
-        }
-    }
+      },
+    },
+  },
 })
 
 export default theme
