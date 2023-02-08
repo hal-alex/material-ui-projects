@@ -32,7 +32,7 @@ const Experience = () => {
     wrapper: {
       maxWidth: "1240px",
     },
-    links: (theme) => ({
+    link: (theme) => ({
       flexGrow: 1,
       display: "flex",
       flexWrap: "wrap",

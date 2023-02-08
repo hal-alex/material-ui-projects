@@ -8,6 +8,7 @@ import Hero from "./components/Hero"
 import Card from "./components/Card"
 import CreativeDesign from "./components/CreativeDesign"
 import Experience from "./components/Experience"
+import ContactUs from "./components/ContactUs"
 
 function App() {
   return (
@@ -16,8 +17,9 @@ function App() {
       <Hero></Hero>
       <CreativeDesign></CreativeDesign>
       <Experience></Experience>
+      <ContactUs></ContactUs>
     </Box>
-  );
+  )
 }
 
-export default App;
+export default App
