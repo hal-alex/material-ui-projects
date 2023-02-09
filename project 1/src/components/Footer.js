@@ -20,6 +20,108 @@ import medium from "../img/medium.svg"
 import dribble from "../img/dribble.svg"
 
 const Footer = () => {
+  const styles = {
+    footer: (theme) => ({
+      maxWidth: "1240px",
+      padding: "44px 20px",
+      textAlign: "left",
+      margin: "auto",
+      [theme.breakpoints.up("lg")]: {
+        padding: "88px 20px",
+      },
+    }),
+    gridWrapper: (theme) => ({
+      padding: "44px 0px",
+      borderTop: `0.5px solid ${theme.palette.slateBlue.main}`,
+      borderBottom: `0.5px solid ${theme.palette.slateBlue.main}`,
+      rowGap: "24px",
+      [theme.breakpoints.up("lg")]: {
+        padding: "88px 0px",
+      },
+    }),
+    linkTitle: {
+      fontWeight: 700,
+      fontSize: "24px",
+      lineHeight: "29px",
+    },
+    title: (theme) => ({
+      fontWeight: 500,
+      fontSize: "24px",
+      lineHeight: "29px",
+      [theme.breakpoints.up("lg")]: {
+        fontSize: "48px",
+        lineHeight: "59px",
+      },
+    }),
+    text: (theme) => ({
+      fontWeight: 500,
+      fontSize: "16px",
+      lineHeight: "28px",
+      marginTop: "24px",
+      color: "#000000",
+      textTransform: "capitalize",
+      [theme.breakpoints.up("lg")]: {
+        fontSize: "16px",
+        lineHeight: "28px",
+      },
+    }),
+    paper: {
+      p: "8px",
+      display: "flex",
+      alignItems: "center",
+      background: "#F5F5F5",
+      borderRadius: "8px",
+      boxShadow: "none",
+      marginTop: "20px",
+    },
+    btn: (theme) => ({
+      background: `${theme.palette.slateBlue.main}`,
+      borderRadius: "8px",
+      fontWeight: 700,
+      fontSize: "16px",
+      lineHeight: "20px",
+      textTransform: "capitalize",
+      color: "#fff",
+      p: "12px",
+      width: "131px",
+    }),
+    itemList: {
+      p: "12px 0",
+      color: "#686868",
+      fontWeight: 500,
+      fontSize: "16px",
+      lineHeight: "20px",
+      textTransform: "capitalize",
+    },
+    subscribeFooter: (theme) => ({
+      width: "100%",
+      maxWidth: "372px",
+      [theme.breakpoints.up("lg")]: {
+        width: "372px",
+      },
+    }),
+
+    icon: {
+      width: "16px",
+      height: "16px",
+      color: "#777FEB",
+    },
+    emailBlock: (theme) => ({
+      [theme.breakpoints.up("lg")]: {
+        display: "flex",
+        justifyContent: "flex-end",
+      },
+    }),
+    inputBase: {
+      ml: 1,
+      flex: 1,
+      "& input::placeholder": {
+        fontSize: "20px",
+        lineHeight: "20px",
+      },
+    },
+  }
+
   const services = [
     "UX/UI Design",
     "Development",
@@ -47,14 +149,12 @@ const Footer = () => {
     { title: "medium", img: medium },
   ]
 
-  const styles = {}
-
   return (
     <Box sx={styles.footer}>
       <Grid
         container
         columns={{ xs: 4, sm: 8, md: 12 }}
-        style={styles.gridWrapper}
+        sx={styles.gridWrapper}
       >
         <Grid item xs={6} sm={4} md={3}>
           <Box>
@@ -62,10 +162,10 @@ const Footer = () => {
               services
             </Typography>
             <List>
-              {services.map((service, index) => {
+              {services.map((item, index) => {
                 return (
                   <ListItem sx={styles.itemList} key={index}>
-                    {service}
+                    {item}
                   </ListItem>
                 )
               })}
@@ -78,10 +178,10 @@ const Footer = () => {
               links
             </Typography>
             <List>
-              {links.map((link, index) => {
+              {links.map((item, index) => {
                 return (
                   <ListItem sx={styles.itemList} key={index}>
-                    {link}
+                    {item}
                   </ListItem>
                 )
               })}
@@ -97,8 +197,8 @@ const Footer = () => {
               {follow.map((item, index) => {
                 return (
                   <ListItem sx={styles.itemList} key={index}>
-                    {typeof item === "string" ? (
-                      <Box component="img" src={item.img}></Box>
+                    {typeof item.img === "string" ? (
+                      <Box component="img" src={item.img} />
                     ) : (
                       item.img
                     )}
@@ -111,22 +211,19 @@ const Footer = () => {
             </List>
           </Box>
         </Grid>
-        <Grid item xs={6} sm={4} md={2} sx={styles.emailBlock}>
-          <Box sx={styles.subscribeFooter}>
+        <Grid item xs={6} sm={4} md={4} sx={styles.emailBlock}>
+          <Box sx={styles.subsribeFooter}>
             <Typography variant="h3" sx={styles.title}>
-              subscribe to email
+              subscribe our newsletter
             </Typography>
             <Typography sx={styles.text}>
-              {" "}
-              check out our latest developers
-              <Link>terms and conditions</Link>
+              Lorem ipsum dolor sit amet,{" "}
+              <Link sx={{ color: "#777FEB" }}> consectetur adipiscing </Link>
+              elit.consectetur. psum dolor sit am psum dolor sit am.{" "}
             </Typography>
             <Paper component="form" sx={styles.paper}>
-              <InputBase
-                sx={styles.inputBase}
-                placeholder="your email"
-              ></InputBase>
-              <Button sx={styles.btn}>Subscribe</Button>
+              <InputBase sx={styles.inputBase} placeholder="Email address" />
+              <Button sx={styles.btn}>sign up</Button>
             </Paper>
           </Box>
         </Grid>
